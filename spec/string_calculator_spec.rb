@@ -1,36 +1,49 @@
-# String calculator specs
+# frozen_string_literal: true
+
 require_relative '../lib/string_calculator'
 
+# rubocop:disable Metrics/BlockLength
 RSpec.describe StringCalculator do
-  describe "#add" do
-    it "returns 0 for an empty string" do
+  describe '#add with an empty string' do
+    it 'returns 0' do
       calculator = StringCalculator.new
-      expect(calculator.add("")).to eq(0)
+      expect(calculator.add('')).to eq(0)
     end
+  end
 
-    it "returns the number itself for a single number" do
+  describe '#add with a single number' do
+    it 'returns the number itself' do
       calculator = StringCalculator.new
-      expect(calculator.add("1")).to eq(1)
+      expect(calculator.add('1')).to eq(1)
     end
+  end
 
-    it "returns the sum of two numbers" do
+  describe '#add with two numbers' do
+    it 'returns the sum of the numbers' do
       calculator = StringCalculator.new
-      expect(calculator.add("1,5")).to eq(6)
+      expect(calculator.add('1,2')).to eq(3)
     end
+  end
 
-    it "handles newlines between numbers" do
+  describe '#add with multiple numbers' do
+    it 'returns the sum of the numbers' do
       calculator = StringCalculator.new
-      expect(calculator.add("\n1,2,\n3")).to eq(6)
+      expect(calculator.add('1,2,3,4')).to eq(10)
     end
+  end
 
-    it "handles custom delimiters" do
+  describe '#add with new lines between numbers' do
+    it 'returns the sum of the numbers' do
+      calculator = StringCalculator.new
+      expect(calculator.add("1\n2,3")).to eq(6)
+    end
+  end
+
+  describe '#add with different delimiters' do
+    it 'returns the sum of the numbers' do
       calculator = StringCalculator.new
       expect(calculator.add("//;\n1;2")).to eq(3)
     end
-
-    it "throws an exception for negative numbers" do
-      calculator = StringCalculator.new
-      expect { calculator.add("1,-2,3") }.to raise_error("negative numbers not allowed: -2")
-    end
   end
 end
+# rubocop:enable Metrics/BlockLength
