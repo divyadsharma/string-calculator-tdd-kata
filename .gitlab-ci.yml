@@ -1,0 +1,34 @@
+image: ruby:3.2 
+
+stages:
+  - test
+  - deploy
+
+before_script:
+  - gem install bundler
+  - bundle install
+
+test:
+  stage: test
+  script:
+    - bundle exec rspec
+  artifacts:
+    paths:
+      - coverage/
+  only:
+    - develop
+
+rubocop:
+  stage: test
+  script:
+    - gem install rubocop
+    - rubocop
+  only:
+    - develop
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying the app..."
+  only:
+    - main
