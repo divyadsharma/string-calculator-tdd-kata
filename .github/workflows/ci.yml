@@ -29,7 +29,7 @@ jobs:
 
       - name: Run RSpec tests
         run: bundle exec rspec
-          
+
   rubocop:
     runs-on: ubuntu-latest
     steps:
@@ -48,16 +48,16 @@ jobs:
 
       - name: Run RuboCop
         run: rubocop
-          
+
   deploy:
     needs: test
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'  # Deploy only when merged into 'main'
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy (Example: Docker)
+      - name: Deploy (Example Step)
         run: |
           echo "Deploying the application..."
-          # Add your deployment script here
+          # Add deployment commands here (e.g., Docker push, artifact upload)
