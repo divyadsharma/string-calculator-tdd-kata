@@ -1,4 +1,3 @@
-# string-calculator-tdd-kata
 # String Calculator TDD Kata
 
 This is a Ruby implementation of the **String Calculator TDD Kata**, following the Test-Driven Development (TDD) approach. The goal is to create a simple string calculator that can handle various input formats and edge cases.
