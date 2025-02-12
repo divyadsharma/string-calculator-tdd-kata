@@ -16,29 +16,29 @@ The `StringCalculator` class has a single method `add` that takes a string of nu
 ---
 
 ## **Setup**
-1. Ensure you have Ruby installed. You can check by running:
-  ```bash
-  ruby -v
+1. Ensure you have **Ruby** installed. You can check by running:
+   ```sh
+   ruby -v
 2. Install rspec for testing
-  ```bash
-  gem install rspec
+   ```sh
+   gem install rspec
 3. Clone this repository or create a new directory for the project:
-  ```bash
-  git clone <repository-url>
-  cd string_calculatorstring-calculator-tdd-kata
+   ```sh
+   git clone <repository-url>
+   cd string_calculatorstring-calculator-tdd-kata
 4. Intiliaze Rspec
-  ```bash
-  rspec --init
+   ```sh
+   rspec --init
 
-## **  Running the Tests**
+## **Running the Tests**
 
 1. To run the tests, use the following command:
-  ```bash
-  rspec
+   ```sh
+   rspec
 
 2. You should see output like this:
-  ```bash
-  StringCalculator
+   ```sh
+   StringCalculator
     #add
       returns 0 for an empty string
       returns the number itself for a single number
@@ -47,16 +47,15 @@ The `StringCalculator` class has a single method `add` that takes a string of nu
       supports custom delimiters
       throws an exception for negative numbers
 
-  6 examples, 0 failures
+   6 examples, 0 failures
 
-## **  Code Example**
+## **Code Example**
 
-  ```bash
-  calculator = StringCalculator.new
+   ```sh
+   calculator = StringCalculator.new
 
-  puts calculator.add("")           # => 0
-  puts calculator.add("1")          # => 1
-  puts calculator.add("1,5")        # => 6
-  puts calculator.add("1\n2,3")     # => 6
-  puts calculator.add("//;\n1;2")   # => 3
-  
+   puts calculator.add("")           # => 0
+   puts calculator.add("1")          # => 1
+   puts calculator.add("1,5")        # => 6
+   puts calculator.add("1\n2,3")     # => 6
+   puts calculator.add("//;\n1;2")   # => 3
